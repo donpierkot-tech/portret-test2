@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mój Personalizowany Portret</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Lilita+One&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="genz">
+
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="mill-glow"></div>
+<div class="mill-glow-2"></div>
+<div class="klasyk-glow"></div>
+<div class="transition-curtain" id="transitionCurtain"></div>
+
+<!-- Balony dla motywu Dzieci -->
+<div class="dzieci-balloons dzieci-balloons-left">
+  <svg width="120" height="320" viewBox="0 0 120 320" fill="none" class="balloon-group" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="45" cy="60" rx="32" ry="40" fill="#E8896A" opacity=".7"/>
+    <path d="M45 100Q42 108 45 115" stroke="#E8896A" stroke-width="1.5" fill="none"/>
+    <path d="M45 115C40 150 50 200 42 280" stroke="#E8896A" stroke-width="1" fill="none" opacity=".4"/>
+    <ellipse cx="85" cy="90" rx="25" ry="32" fill="#5BA3C9" opacity=".6"/>
+    <path d="M85 122Q83 128 85 134" stroke="#5BA3C9" stroke-width="1.5" fill="none"/>
+    <path d="M85 134C80 170 88 220 82 300" stroke="#5BA3C9" stroke-width="1" fill="none" opacity=".3"/>
+    <ellipse cx="30" cy="140" rx="20" ry="26" fill="#F5D060" opacity=".5"/>
+    <path d="M30 166Q28 172 30 177" stroke="#F5D060" stroke-width="1.5" fill="none"/>
+    <path d="M30 177C26 210 34 250 28 320" stroke="#F5D060" stroke-width="1" fill="none" opacity=".3"/>
+  </svg>
+</div>
+<div class="dzieci-balloons dzieci-balloons-right">
+  <svg width="110" height="300" viewBox="0 0 110 300" fill="none" class="balloon-group-r" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="65" cy="55" rx="28" ry="36" fill="#8FD14F" opacity=".6"/>
+    <path d="M65 91Q63 97 65 103" stroke="#8FD14F" stroke-width="1.5" fill="none"/>
+    <path d="M65 103C60 140 68 200 62 280" stroke="#8FD14F" stroke-width="1" fill="none" opacity=".3"/>
+    <ellipse cx="30" cy="100" rx="24" ry="30" fill="#E8896A" opacity=".5"/>
+    <path d="M30 130Q28 136 30 141" stroke="#E8896A" stroke-width="1.5" fill="none"/>
+    <path d="M30 141C26 180 34 230 28 300" stroke="#E8896A" stroke-width="1" fill="none" opacity=".3"/>
+    <ellipse cx="80" cy="130" rx="22" ry="28" fill="#5BA3C9" opacity=".5"/>
+    <path d="M80 158Q78 163 80 168" stroke="#5BA3C9" stroke-width="1.5" fill="none"/>
+    <path d="M80 168C76 200 82 250 78 300" stroke="#5BA3C9" stroke-width="1" fill="none" opacity=".3"/>
+  </svg>
+</div>
+
+<!-- Tab bar -->
+<div class="tab-bar">
+  <div class="tab-bar-label">Wybierz erę</div>
+  <button class="tab-btn" data-tab="dzieci">Dzieci</button>
+  <button class="tab-btn active" data-tab="genz">Gen Z</button>
+  <button class="tab-btn" data-tab="millennial">Millenialsi</button>
+  <button class="tab-btn" data-tab="klasyk">Klasyk</button>
+  <button class="tab-btn" data-tab="zwierzaki">Zwierzaki</button>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="#" class="nav-logo" id="navLogo">MÓJ PORTRET</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#formularz">Portret</a></li>
+    <li><a href="#proces">Proces</a></li>
+    <li><a href="#zamow">Zamów</a></li>
+    <li><a href="o-nas.html">O nas</a></li>
+    <li><a href="https://mojabajkowaprzygoda.pl/moje-konto/">Moje konto</a></li>
+  </ul>
+</nav>
+
+<div class="page-content" id="pageContent">
+
+  <!-- Hero -->
+  <section class="hero" id="heroSection">
+    <div class="hero-bg-text" id="heroBgText">PORTRET</div>
+    <svg class="mill-ornament mill-ornament-1" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 0C100 0 30 80 30 160C30 220 60 280 100 300C140 280 170 220 170 160C170 80 100 0 100 0Z" stroke="currentColor" stroke-width="1" fill="none"/><path d="M100 40L100 280" stroke="currentColor" stroke-width=".5"/><path d="M100 100C80 80 50 90 40 120" stroke="currentColor" stroke-width=".5" fill="none"/><path d="M100 140C120 120 150 130 160 160" stroke="currentColor" stroke-width=".5" fill="none"/><path d="M100 180C80 160 50 170 45 195" stroke="currentColor" stroke-width=".5" fill="none"/><path d="M100 220C120 200 145 210 155 230" stroke="currentColor" stroke-width=".5" fill="none"/></svg>
+    <svg class="mill-ornament mill-ornament-2" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 0C100 0 30 80 30 160C30 220 60 280 100 300C140 280 170 220 170 160C170 80 100 0 100 0Z" stroke="currentColor" stroke-width="1" fill="none"/><path d="M100 40L100 280" stroke="currentColor" stroke-width=".5"/><path d="M100 100C80 80 50 90 40 120" stroke="currentColor" stroke-width=".5" fill="none"/><path d="M100 140C120 120 150 130 160 160" stroke="currentColor" stroke-width=".5" fill="none"/></svg>
+    <svg class="klasyk-corner klasyk-corner-tl" width="100" height="100" viewBox="0 0 100 100" fill="none"><path d="M2 98L2 2L98 2" stroke="currentColor" stroke-width=".5" fill="none"/><path d="M2 2L30 30" stroke="currentColor" stroke-width=".3" fill="none"/><circle cx="2" cy="2" r="3" fill="currentColor" opacity=".3"/><path d="M15 2L15 15L2 15" stroke="currentColor" stroke-width=".3" fill="none"/></svg>
+    <svg class="klasyk-corner klasyk-corner-br" width="100" height="100" viewBox="0 0 100 100" fill="none"><path d="M2 98L2 2L98 2" stroke="currentColor" stroke-width=".5" fill="none"/><path d="M2 2L30 30" stroke="currentColor" stroke-width=".3" fill="none"/><circle cx="2" cy="2" r="3" fill="currentColor" opacity=".3"/><path d="M15 2L15 15L2 15" stroke="currentColor" stroke-width=".3" fill="none"/></svg>
+    <div class="deco-lines"><div class="deco-line"></div><div class="deco-line"></div><div class="deco-line"></div><div class="deco-line"></div><div class="deco-line"></div></div>
+    <p class="hero-tag animate-in" id="heroTag"></p>
+    <h1 class="hero-title animate-in" id="heroTitle"></h1>
+    <p class="hero-sub animate-in" id="heroSub"></p>
+    <div class="hero-divider animate-in"></div>
+    <div class="hero-cta-row animate-in" id="heroCtaRow">
+      <a href="#formularz" class="btn-primary"><span id="ctaBtnText"></span></a>
+      <a href="#proces" class="hero-scroll"><span class="arrow">↓</span> <span id="scrollText"></span></a>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section"><div class="marquee-track" id="marqueeTrack"></div></div>
+
+  <!-- Formularz -->
+  <section class="form-section" id="formularz">
+    <p class="section-label animate-in" id="formLabel"></p>
+    <h2 class="section-title animate-in" id="formTitle"></h2>
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="formSteps"></div>
+    <div class="form-nav" id="formNav">
+      <button class="form-nav-btn prev" id="prevBtn" disabled>← Wstecz</button>
+      <button class="form-nav-btn next" id="nextBtn" disabled>Dalej →</button>
+    </div>
+  </section>
+
+  <!-- Proces -->
+  <section class="process" id="proces">
+    <p class="section-label animate-in" id="processLabel" style="margin-bottom:3rem"></p>
+    <div class="process-grid" id="processGrid"></div>
+  </section>
+
+  <!-- Porównanie stylów -->
+  <section class="style-compare animate-in" id="styleCompare">
+    <p class="sc-intro">Ten sam portret, ten sam koncept — a zupełnie inny efekt. Wybór stylu artystycznego zmienia charakter, nastrój i odbiór Twojego portretu. Poniżej widzisz jak jeden koncept wygląda w różnych technikach.</p>
+    <div class="sc-grid">
+      <div class="sc-item">
+        <div class="sc-frame original"><div class="sc-frame-inner">Zdjęcie źródłowe<br>— oryginalne ujęcie<br>przed obróbką</div></div>
+        <div class="sc-caption">Oryginalny koncept</div>
+        <div class="sc-note">Surowe zdjęcie, punkt wyjścia dla artysty</div>
+      </div>
+      <div class="sc-item sc-text">
+        <div class="sc-text-heading">Jeden koncept,<br>wiele wcieleń</div>
+        <div class="sc-accent-line"></div>
+        <div class="sc-text-body">Każdy styl artystyczny interpretuje to samo zdjęcie inaczej — wydobywa inne cechy, buduje inny nastrój, opowiada inną wersję tej samej historii. Porównaj efekty obok.</div>
+      </div>
+      <div class="sc-item" id="scStyle1">
+        <div class="sc-frame styled"><div class="sc-frame-inner">Podgląd portretu<br>— styl 1</div></div>
+        <div class="sc-caption" id="scStyle1Name">Line Art</div>
+        <div class="sc-note" id="scStyle1Note">Precyzyjne kontury, płaskie wypełnienia, graficzna klarowność</div>
+      </div>
+      <div class="sc-item" id="scStyle2">
+        <div class="sc-frame styled"><div class="sc-frame-inner">Podgląd portretu<br>— styl 2</div></div>
+        <div class="sc-caption" id="scStyle2Name">Olej klasyczny</div>
+        <div class="sc-note" id="scStyle2Note">Miękkie przejścia tonalne, bogata faktura, głębia światłocienia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="zamow">
+    <p class="section-label animate-in" id="ctaLabel"></p>
+    <h2 class="cta-headline animate-in" id="ctaHeadline"></h2>
+    <div class="cta-divider"></div>
+    <p class="cta-sub animate-in" id="ctaSub"></p>
+    <a href="#formularz" class="btn-primary animate-in"><span id="ctaFinalBtn"></span></a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <p class="footer-copy">© 2026 Mój Personalizowany Portret — Moja Przygoda</p>
+      <div class="footer-contact">
+        <span>+48 000 000 000</span>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e98286879d88829da984868388999b93908e868d88c79985">[email&#160;protected]</a></span>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="regulamin.html">Regulamin</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="polityka-zwrotow.html">Polityka zwrotów</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div id="footerLinks" style="display:none"></div>
+  </footer>
+
+</div>
+
+<!-- Kolejność ważna: najpierw dane, potem logika -->
+<script src="data.js"></script>
+<script src="form.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>

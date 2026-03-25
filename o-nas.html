@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O nas — Mój Personalizowany Portret</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#F8F5F1;color:#2A2420;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3.5rem;background:rgba(248,245,241,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(42,36,32,.08)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;letter-spacing:.05em;font-weight:700;font-style:italic;color:#2A2420;text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:'DM Sans',sans-serif;font-size:.8rem;letter-spacing:.06em;text-transform:capitalize;color:#9a918a;text-decoration:none;transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:#8B6F5E}
+
+.hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 8vw 6rem;position:relative;overflow:hidden}
+.hero-tag{font-family:'DM Sans',sans-serif;font-size:.75rem;letter-spacing:.25em;font-weight:300;color:#8B6F5E;margin-bottom:1.5rem;text-transform:uppercase}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.05;font-weight:400;max-width:800px;margin-bottom:2rem}
+.hero-title em{font-style:italic;color:#8B6F5E}
+.hero-divider{width:60px;height:1px;background:#8B6F5E;opacity:.4;margin:0 auto}
+.hero-bg{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(10rem,18vw,20rem);color:transparent;-webkit-text-stroke:1px rgba(139,111,94,.05);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;font-style:italic}
+
+.section{padding:7rem 8vw;max-width:1100px;margin:0 auto}
+.section-label{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;font-weight:300;color:#8B6F5E;margin-bottom:1rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.1;font-weight:400;margin-bottom:3rem}
+.section-title em{font-style:italic;color:#8B6F5E}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.two-col-text p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;font-style:italic;line-height:1.85;color:#5a4f4a;margin-bottom:1.5rem}
+.two-col-text p:last-child{margin-bottom:0}
+.two-col-image{aspect-ratio:4/5;background:rgba(139,111,94,.08);border:1px solid rgba(139,111,94,.15);display:flex;align-items:center;justify-content:center}
+.two-col-image-inner{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#9a918a;font-style:italic;text-align:center;padding:2rem}
+
+.values{padding:7rem 8vw;background:rgba(139,111,94,.04);border-top:1px solid rgba(139,111,94,.1);border-bottom:1px solid rgba(139,111,94,.1)}
+.values-inner{max-width:1100px;margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3rem}
+.value-item{padding:2.5rem 2rem;border-left:1px solid rgba(139,111,94,.2)}
+.value-num{font-family:'Playfair Display',serif;font-size:3rem;color:transparent;-webkit-text-stroke:1px rgba(139,111,94,.2);line-height:1;margin-bottom:1.5rem;font-style:italic}
+.value-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;margin-bottom:.8rem}
+.value-desc{font-family:'DM Sans',sans-serif;font-size:.85rem;color:#9a918a;line-height:1.7}
+
+.team{padding:7rem 8vw;max-width:1100px;margin:0 auto}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;margin-top:3rem}
+.team-card{padding:2.5rem;border:1px solid rgba(139,111,94,.12);background:rgba(248,245,241,.6)}
+.team-avatar{width:80px;height:80px;border-radius:50%;background:rgba(139,111,94,.1);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
+.team-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:.3rem}
+.team-role{font-family:'DM Sans',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#8B6F5E;margin-bottom:1rem}
+.team-desc{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;font-style:italic;color:#5a4f4a;line-height:1.7}
+
+.cta-section{padding:8rem 8vw;text-align:center;border-top:1px solid rgba(139,111,94,.1)}
+.cta-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;font-weight:400;margin-bottom:1.5rem}
+.cta-title em{font-style:italic;color:#8B6F5E}
+.cta-sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;color:#5a4f4a;max-width:500px;margin:0 auto 3rem;line-height:1.8}
+.btn{font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:.15em;border-radius:50px;padding:1.1rem 3.2rem;background:#8B6F5E;color:#F8F5F1;border:none;cursor:pointer;text-decoration:none;display:inline-block;font-size:.8rem;transition:all .3s}
+.btn:hover{background:#7a5f4e;transform:scale(1.03)}
+
+footer{padding:3rem 3.5rem;border-top:1px solid rgba(139,111,94,.1);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem}
+.footer-left{display:flex;flex-direction:column;gap:.5rem}
+.footer-copy{font-family:'DM Sans',sans-serif;font-size:.65rem;color:#9a918a;letter-spacing:.06em}
+.footer-contact{display:flex;flex-direction:column;gap:.3rem}
+.footer-contact a,.footer-contact span{font-family:'DM Sans',sans-serif;font-size:.65rem;color:#9a918a;text-decoration:none;letter-spacing:.06em;transition:color .3s}
+.footer-contact a:hover{color:#8B6F5E}
+.footer-right{display:flex;flex-direction:column;gap:.3rem;text-align:right}
+.footer-right a{font-family:'DM Sans',sans-serif;font-size:.65rem;color:#9a918a;text-decoration:none;letter-spacing:.06em;transition:color .3s}
+.footer-right a:hover{color:#8B6F5E}
+
+.animate-in{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.animate-in.shown{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .two-col{grid-template-columns:1fr;gap:3rem}
+  .values-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .section{padding:4rem 5vw}
+  .values{padding:4rem 5vw}
+  .team{padding:4rem 5vw}
+  .cta-section{padding:5rem 5vw}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .footer-right{text-align:center}
+  .footer-contact{align-items:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Mój Portret</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Portret</a></li>
+    <li><a href="o-nas.html" class="active">O nas</a></li>
+    <li><a href="https://mojabajkowaprzygoda.pl/moje-konto/">Moje konto</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">Historia</div>
+  <p class="hero-tag animate-in">Nasza historia</p>
+  <h1 class="hero-title animate-in">Wierzymy, że każda twarz<br>niesie w sobie <em>opowieść</em></h1>
+  <div class="hero-divider animate-in"></div>
+</section>
+
+<section class="section">
+  <div class="two-col">
+    <div class="two-col-text animate-in">
+      <p class="section-label">Kim jesteśmy</p>
+      <h2 class="section-title">Pracownia portretowa<br><em>z pasją do detalu</em></h2>
+      <p>Mój Personalizowany Portret to projekt urodzony z przekonania, że sztuka portretowa powinna być dostępna dla każdego — nie tylko dla tych, którzy mogą sobie pozwolić na pracownię malarską.</p>
+      <p>Łączymy rzemiosło artystyczne z nowoczesną technologią, by każdy portret był wyjątkowy, osobisty i stworzony z myślą o konkretnej osobie — jej charakterze, historii i emocjach, które chce utrwalić.</p>
+      <p>Każde zamówienie traktujemy indywidualnie. Nie ma u nas taśmy produkcyjnej — jest uważność, rozmowa i szczera chęć stworzenia czegoś, co zostanie z Tobą na lata.</p>
+    </div>
+    <div class="two-col-image animate-in">
+      <div class="two-col-image-inner">Tu pojawi się<br>zdjęcie pracowni<br>lub zespołu</div>
+    </div>
+  </div>
+</section>
+
+<div class="values">
+  <div class="values-inner">
+    <p class="section-label animate-in">Nasze wartości</p>
+    <h2 class="section-title animate-in">To, co nas<br><em>napędza każdego dnia</em></h2>
+    <div class="values-grid">
+      <div class="value-item animate-in">
+        <div class="value-num">01</div>
+        <h3 class="value-title">Autentyczność</h3>
+        <p class="value-desc">Każdy portret powstaje na podstawie Twojego zdjęcia i Twoich preferencji. Nie ma dwóch takich samych — bo nie ma dwóch takich samych ludzi.</p>
+      </div>
+      <div class="value-item animate-in">
+        <div class="value-num">02</div>
+        <h3 class="value-title">Jakość bez kompromisów</h3>
+        <p class="value-desc">Używamy wyłącznie profesjonalnych materiałów — papier archiwalny, farby odporne na blaknięcie, płótna naciągane ręcznie. Portret ma trwać dekady.</p>
+      </div>
+      <div class="value-item animate-in">
+        <div class="value-num">03</div>
+        <h3 class="value-title">Relacja z klientem</h3>
+        <p class="value-desc">Zatwierdzasz szkic zanim przejdziemy do finalnej wersji. Twoja opinia jest dla nas najważniejsza — robimy poprawki dopóki nie będziesz w pełni zadowolony.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="team">
+  <p class="section-label animate-in">Nasz zespół</p>
+  <h2 class="section-title animate-in">Ludzie stojący<br><em>za każdym portretem</em></h2>
+  <div class="team-grid">
+    <div class="team-card animate-in">
+      <div class="team-avatar">🎨</div>
+      <h3 class="team-name">Imię Nazwisko</h3>
+      <p class="team-role">Założyciel i główny artysta</p>
+      <p class="team-desc">Absolwent Akademii Sztuk Pięknych, od ponad dziesięciu lat tworzy portrety dla klientów z całej Polski i Europy. Specjalizuje się w technice olejnej i akwareli.</p>
+    </div>
+    <div class="team-card animate-in">
+      <div class="team-avatar">✍️</div>
+      <h3 class="team-name">Imię Nazwisko</h3>
+      <p class="team-role">Ilustrator i artysta cyfrowy</p>
+      <p class="team-desc">Łączy klasyczne wykształcenie plastyczne z nowoczesnymi technikami cyfrowymi. Odpowiada za portrety w stylu anime, glitch i ilustracje dla dzieci.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="cta-title animate-in">Gotowy na swój<br><em>portret?</em></h2>
+  <p class="cta-sub animate-in">Wróć na stronę główną i skonfiguruj swój portret — to zajmie mniej niż pięć minut.</p>
+  <a href="index.html" class="btn animate-in">Zamów portret →</a>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <p class="footer-copy">© 2026 Mój Personalizowany Portret — Moja Przygoda</p>
+    <div class="footer-contact">
+      <span>+48 000 000 000</span>
+      <span>kontakt@mojaprzygoda.pl</span>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-right">
+    <a href="regulamin.html">Regulamin</a>
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+    <a href="polityka-zwrotow.html">Polityka zwrotów</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('shown'); observer.unobserve(e.target); }
+  });
+}, {threshold:.1});
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
