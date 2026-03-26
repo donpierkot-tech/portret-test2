@@ -20,7 +20,7 @@ function renderContent(theme) {
   document.getElementById('formTitle').innerHTML = c.formTitle;
 
   // Reset formularza przy zmianie motywu
-  F = {step:1, subject:null, childGender:null, style:null, concept:null, medium:null, size:null, shipping:{}};
+  F = {step: THEMES_NO_STEP1.includes(theme) ? 2 : 1, subject:null, childGender:null, style:null, concept:null, medium:null, size:null, shipping:{}};
   extraStylesOpen = false;
   renderForm();
 
