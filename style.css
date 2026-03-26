@@ -102,6 +102,7 @@
   [data-theme="millennial"] .nav-logo{font-size:1.2rem;letter-spacing:.05em;font-weight:700;font-style:italic}
   [data-theme="klasyk"] .nav-logo{font-size:1.3rem;letter-spacing:.2em;font-weight:400}
   [data-theme="dzieci"] .nav-logo{font-size:1.5rem;letter-spacing:.05em}
+  .nav-hamburger{display:none;outline:none}
   .nav-links{display:flex;gap:2rem;list-style:none}
   [data-theme="millennial"] .nav-links{gap:2.5rem} [data-theme="klasyk"] .nav-links{gap:3rem}
   .nav-links a{font-family:var(--mono-font);font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--fg);text-decoration:none;position:relative;transition:all .4s}
@@ -520,7 +521,16 @@
     .process-step:nth-last-child(-n+2){border-bottom:none}
     .size-grid{grid-template-columns:1fr}
     .sc-grid{grid-template-columns:1fr 1fr;gap:1.2rem}
-    .nav-links{display:none}
+    .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;z-index:99;opacity:0;transition:opacity .3s}
+    .nav-links.open{display:flex;opacity:1}
+    .nav-links li{list-style:none}
+    .nav-links a{font-size:1.2rem!important;letter-spacing:.15em}
+    .nav-hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem;z-index:101;position:relative;isolation:isolate}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--fg);transition:all .3s;transform-origin:center;mix-blend-mode:normal}
+    [data-theme="genz"] .nav-hamburger span{background:#f0efe9}
+    .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
     .hero-cta-row{flex-direction:column;align-items:flex-start}
     [data-theme="millennial"] .hero-cta-row,[data-theme="klasyk"] .hero-cta-row,[data-theme="dzieci"] .hero-cta-row,[data-theme="zwierzaki"] .hero-cta-row{align-items:center}
     .klasyk-corner{display:none}
@@ -541,11 +551,11 @@
     /* Tab bar */
     .tab-bar{bottom:1rem}
     .tab-bar-label{display:none}
-    .tab-btn{padding:.6rem .75rem;font-size:.5rem;letter-spacing:.06em;min-width:0;white-space:nowrap}
-    [data-theme="millennial"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.03em}
-    [data-theme="klasyk"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.04em}
-    [data-theme="dzieci"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.02em}
-    [data-theme="zwierzaki"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.02em}
+    .tab-btn{padding:.6rem .75rem;font-size:.5rem;letter-spacing:.08em;min-width:0}
+    [data-theme="millennial"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.04em}
+    [data-theme="klasyk"] .tab-btn{padding:.6rem .75rem;font-size:.55rem;letter-spacing:.05em}
+    [data-theme="dzieci"] .tab-btn{padding:.6rem .75rem;font-size:.55rem;letter-spacing:.02em}
+    [data-theme="zwierzaki"] .tab-btn{padding:.6rem .75rem;font-size:.55rem;letter-spacing:.02em}
 
     /* Hero */
     .hero{padding:0 5vw}
@@ -598,9 +608,8 @@
     .sc-grid{grid-template-columns:1fr}
 
     /* Footer */
-    footer{flex-direction:column;text-align:center;align-items:center;padding:2rem 4vw}
-    .footer-left{align-items:center}
-    .footer-right{text-align:center;align-items:center}
+    footer{flex-direction:column;text-align:center;padding:2rem 4vw}
+    .footer-right{text-align:center}
     .footer-contact{align-items:center}
 
     /* Toast — narrower on phone */
