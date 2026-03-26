@@ -541,11 +541,11 @@
     /* Tab bar */
     .tab-bar{bottom:1rem}
     .tab-bar-label{display:none}
-    .tab-btn{padding:.6rem .75rem;font-size:.5rem;letter-spacing:.08em;min-width:0}
-    [data-theme="millennial"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.04em}
-    [data-theme="klasyk"] .tab-btn{padding:.6rem .75rem;font-size:.55rem;letter-spacing:.05em}
-    [data-theme="dzieci"] .tab-btn{padding:.6rem .75rem;font-size:.55rem;letter-spacing:.02em}
-    [data-theme="zwierzaki"] .tab-btn{padding:.6rem .75rem;font-size:.55rem;letter-spacing:.02em}
+    .tab-btn{padding:.6rem .75rem;font-size:.5rem;letter-spacing:.06em;min-width:0;white-space:nowrap}
+    [data-theme="millennial"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.03em}
+    [data-theme="klasyk"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.04em}
+    [data-theme="dzieci"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.02em}
+    [data-theme="zwierzaki"] .tab-btn{padding:.6rem .75rem;font-size:.53rem;letter-spacing:.02em}
 
     /* Hero */
     .hero{padding:0 5vw}
@@ -598,8 +598,9 @@
     .sc-grid{grid-template-columns:1fr}
 
     /* Footer */
-    footer{flex-direction:column;text-align:center;padding:2rem 4vw}
-    .footer-right{text-align:center}
+    footer{flex-direction:column;text-align:center;align-items:center;padding:2rem 4vw}
+    .footer-left{align-items:center}
+    .footer-right{text-align:center;align-items:center}
     .footer-contact{align-items:center}
 
     /* Toast — narrower on phone */
