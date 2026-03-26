@@ -4,6 +4,10 @@ let cartAdded = false;
 let photoUrl = null;
 let F = {step:1, subject:null, childGender:null, style:null, concept:null, medium:null, size:null};
 
+function getInitialStep() {
+  return THEMES_NO_STEP1.includes(currentTheme) ? 2 : 1;
+}
+
 // Tematy które mają krok 1 (dla kogo)
 const THEMES_WITH_SUBJECT = ['genz','millennial','klasyk'];
 // Tematy które mają tylko wybór płci dziecka w kroku 1
@@ -443,11 +447,10 @@ function addToCart() {
 }
 
 function resetForm() {
-  F = {step:1, subject:null, childGender:null, style:null, concept:null, medium:null, size:null};
+  F = {step:getInitialStep(), subject:null, childGender:null, style:null, concept:null, medium:null, size:null};
   extraStylesOpen = false;
   cartAdded = false;
   photoUrl = null;
-  if (THEMES_NO_STEP1.includes(currentTheme)) F.step = 2;
   renderForm();
   scrollToForm();
 }
